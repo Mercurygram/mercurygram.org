@@ -221,5 +221,9 @@ Some of the fork is not a toggle. These behaviours are always active.
 
 The fork also carries upstream bug fixes: the Android 16 heads-up notification
 bug, a set of crash and memory-leak fixes, secret-chat delete-for-everyone
-propagation, IPv6 and multi-address proxy connectivity, and several performance
-fixes for large accounts.
+propagation, IPv6 and multi-address proxy connectivity, several performance
+fixes for large accounts, and a batch of photo picking and editing fixes (a
+crop that could silently send the uncropped original, a caption lost when send
+was pressed or moved onto the wrong photo when the selection was reordered,
+rotating in the crop editor discarding the crop, and images pasted from Gboard
+skipping the editor).
