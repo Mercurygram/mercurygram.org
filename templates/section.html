@@ -4,13 +4,7 @@
   {{ <head cfg={config} title={section.title} description={section.description} url={section.permalink}/> }}
 
   <body>
-    <header class="page-head">
-      {{ <nav cfg={config}/> }}
-      <div class="page-head-body">
-        <h1>{{ section.title }}</h1>
-        {% if section.description %}<p class="page-lede">{{ section.description }}</p>{% endif %}
-      </div>
-    </header>
+    {{ <pagehead cfg={config} item={section}/> }}
 
     <main class="page">
       {{ section.content | safe }}

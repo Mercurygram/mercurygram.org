@@ -60,6 +60,18 @@
 </nav>
 {% endcomponent nav %}
 
+{# `item` is the page or the section, whichever the calling template renders:
+   both carry `title` and `description`, so the masthead is one component. #}
+{% component pagehead(cfg, item) %}
+<header class="page-head">
+  {{ <nav cfg={cfg}/> }}
+  <div class="page-head-body">
+    <h1>{{ item.title }}</h1>
+    {% if item.description %}<p class="page-lede">{{ item.description }}</p>{% endif %}
+  </div>
+</header>
+{% endcomponent pagehead %}
+
 {% component footer(cfg) %}
 <footer class="footer">
   <div class="footer-row">
