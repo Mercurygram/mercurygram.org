@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ <head cfg={config} title={section.title} description={section.description} url={section.permalink}/> }}
+
+  <body>
+    <header class="page-head">
+      {{ <nav cfg={config}/> }}
+      <div class="page-head-body">
+        <h1>{{ section.title }}</h1>
+        {% if section.description %}<p class="page-lede">{{ section.description }}</p>{% endif %}
+      </div>
+    </header>
+
+    <main class="page">
+      {{ section.content | safe }}
+
+      {# Cards come from the section's own pages, so adding a client is one more
+         Markdown file. Styles are the download cards' from _sections.scss. #}
+      <div class="dl-grid">
+        {% for p in section.pages %}
+        <a class="dl-card" href="{{ p.permalink }}">
+          <span class="dl-name">{{ p.title }}</span>
+          <span class="dl-desc">{{ p.description }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </main>
+
+    {{ <footer cfg={config}/> }}
+  </body>
+</html>

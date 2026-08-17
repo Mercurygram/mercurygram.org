@@ -1,8 +1,13 @@
 +++
-title = "Features"
+title = "Android"
 description = "Every Mercurygram-specific option in the Android client: what it does, where it lives, and its default."
+weight = 1
 
-# Maintenance: this page is written by hand and updated at release time.
+# Maintenance: this page is written by hand, in lockstep with the client. Rows
+# land as options land: every Mercurygram change that adds, removes, renames,
+# re-defaults or materially changes a user-facing option updates this page in
+# the same unit of work. At release time only the markers below are cleared, no
+# new content is written.
 # Options not yet in the stable build carry a `tag-pre` span reading
 # "pre-release" next to their name. To refresh the markers after a stable
 # release, diff TMessagesProj/src/main/res/values/mg_strings.xml between the tag
@@ -12,15 +17,12 @@ description = "Every Mercurygram-specific option in the Android client: what it 
 # copied verbatim into the published page.
 +++
 
-Everything below is specific to the **Android** client and lives under
-**Settings → Mercurygram**, unless a section says otherwise. Options are off by
-default unless the Default column says otherwise, and apply to the current
-account only. The ones marked *all accounts* are device-wide, which the app also
-tells you in place. Options marked <span class="tag-pre">pre-release</span> are
-not in the current stable build yet; they ship in the 5-dotted pre-release
-builds and land in the next stable.
-
-The Desktop client is a separate fork and is not covered here.
+Options live under **Settings → Mercurygram**, unless a section says otherwise.
+They are off by default unless the Default column says otherwise, and apply to
+the current account only. The ones marked *all accounts* are device-wide, which
+the app also tells you in place. Options marked
+<span class="tag-pre">pre-release</span> are not in the current stable build yet;
+they ship in the 5-dotted pre-release builds and land in the next stable.
 
 ## Hidden accounts
 

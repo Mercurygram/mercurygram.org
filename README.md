@@ -29,11 +29,13 @@ updates the version in `config.toml`, and re-runs the deploy.
 ## Layout
 
 - `config.toml` — site config and all download URLs / version strings (`[extra]`)
-- `templates/`: Tera templates. `index.html` (landing page) and `page.html` (content pages) are
-  built from the components in `components.html` (head, mark, nav, footer) and `content.html`
-  (the landing page sections). Components are hygienic, so each one takes the site config as a
-  `cfg` argument.
-- `content/`: Markdown pages rendered through `page.html`, currently `features.md`
+- `templates/`: Tera templates. `index.html` (landing page), `page.html` (content pages) and
+  `section.html` (section index pages) are built from the components in `components.html`
+  (head, mark, nav, footer) and `content.html` (the landing page sections). Components are
+  hygienic, so each one takes the site config as a `cfg` argument.
+- `content/`: Markdown. `features/` is a section whose `_index.md` renders through
+  `section.html` and lists its pages as cards, one per client (`android.md`, `desktop.md`),
+  each rendered through `page.html`. Adding a client is one more file, no template change.
 - `sass/` — styles, compiled natively by Zola to `/main.css`
 - `static/` — fonts, logo, `CNAME`
 
