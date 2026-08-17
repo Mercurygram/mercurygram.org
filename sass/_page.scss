@@ -1,0 +1,128 @@
+/* ---- standalone content pages (templates/page.html) ---- */
+.page-head {
+  position: relative;
+  background:
+    radial-gradient(120% 120% at 50% -30%, rgba(95, 182, 217, 0.12) 0%, transparent 60%),
+    var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-head-body {
+  max-width: $maxw;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) 1.5rem clamp(2.5rem, 6vw, 4rem);
+}
+
+.page-head-body h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  color: var(--quicksilver);
+}
+
+.page-lede {
+  max-width: 60ch;
+  font-size: 1.06rem;
+  margin: 1.1rem 0 0;
+}
+
+.page {
+  max-width: $maxw;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+}
+
+.page h2 {
+  font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+  color: var(--quicksilver);
+  margin: 3.5rem 0 0.4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.page h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--quicksilver);
+  margin: 2.2rem 0 0.4rem;
+}
+
+.page p,
+.page li {
+  max-width: 78ch;
+}
+
+.page ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--mercury);
+}
+
+.page li {
+  margin-bottom: 0.4rem;
+}
+
+/* Markdown emits a bare <table>; display:block makes it its own scroll
+   container on narrow screens instead of widening the page. */
+.page table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0 2rem;
+  font-size: 0.95rem;
+}
+
+.page th {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mercury-dim);
+  text-align: left;
+  white-space: nowrap;
+  padding: 0 0.9rem 0.6rem 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.page td {
+  vertical-align: top;
+  color: var(--mercury);
+  padding: 0.75rem 0.9rem 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.page td:first-child {
+  color: var(--quicksilver);
+  font-weight: 600;
+  min-width: 15ch;
+}
+
+.page td:last-child,
+.page th:last-child {
+  padding-right: 0;
+}
+
+/* "not in the current stable build yet" marker, same look as .dl-tag */
+.tag-pre {
+  display: inline-block;
+  margin-left: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--hg-bright);
+  background: rgba(95, 182, 217, 0.12);
+  border: 1px solid rgba(95, 182, 217, 0.3);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  vertical-align: 0.08em;
+}
+
+.page .note {
+  border-left: 2px solid var(--line-strong);
+  padding-left: 1rem;
+  color: var(--mercury-dim);
+  font-size: 0.95rem;
+}

@@ -33,6 +33,7 @@ updates the version in `config.toml`, and re-runs the deploy.
   built from the components in `components.html` (head, mark, nav, footer) and `content.html`
   (the landing page sections). Components are hygienic, so each one takes the site config as a
   `cfg` argument.
+- `content/`: Markdown pages rendered through `page.html`, currently `features.md`
 - `sass/` — styles, compiled natively by Zola to `/main.css`
 - `static/` — fonts, logo, `CNAME`
 
