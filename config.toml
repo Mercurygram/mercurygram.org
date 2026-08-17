@@ -7,15 +7,8 @@ description = "Telegram, de-googled. Privacy and security focused forks of Teleg
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = false
-
 # The default language; used in feeds.
 default_language = "en"
-
-[markdown]
-[markdown.highlighting]
-theme = "github-dark"
 
 [extra]
 username = "Timothy Mario Redaelli"

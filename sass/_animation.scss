@@ -28,10 +28,8 @@
 /* Respect reduced motion: freeze the wordmark sheen, drop smooth scroll */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .wordmark {
-    animation: none;
-    background-position: 40% 50%;
-  }
+  /* the `*` rule below stops the sheen, this parks it on a flattering frame */
+  .wordmark { background-position: 40% 50%; }
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;

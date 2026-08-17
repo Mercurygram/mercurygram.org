@@ -7,10 +7,9 @@
 {% component head(cfg, title="", description="", url="") %}
 {% set head_name = title if title else cfg.title %}
 {% set head_suffix = cfg.title if title else cfg.extra.tagline %}
-{% set head_desc = description | striptags | trim | truncate(length=160) if description else cfg.description %}
+{% set head_desc = description if description else cfg.description %}
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{{ head_name }} &mdash; {{ head_suffix }}</title>
