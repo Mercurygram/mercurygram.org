@@ -74,7 +74,9 @@ code {
   margin: 0 0 0.9rem;
 }
 
-.eyebrow code {
+// Inside a mono label the box treatment is noise, the label is already mono
+.eyebrow code,
+.hero-meta code {
   background: none;
   border: none;
   padding: 0;

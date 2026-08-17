@@ -102,27 +102,13 @@
   padding-right: 0;
 }
 
-/* "not in the current stable build yet" marker, same look as .dl-tag */
+/* "not in the current stable build yet" marker, shares the .dl-tag pill in
+   _sections.scss and only overrides what an inline marker needs. */
 .tag-pre {
   display: inline-block;
-  margin-left: 0.45rem;
-  font-family: var(--font-mono);
+  margin: 0 0 0 0.45rem;
   font-size: 0.66rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
   white-space: nowrap;
-  color: var(--hg-bright);
-  background: rgba(95, 182, 217, 0.12);
-  border: 1px solid rgba(95, 182, 217, 0.3);
-  border-radius: 999px;
   padding: 0.1rem 0.5rem;
   vertical-align: 0.08em;
-}
-
-.page .note {
-  border-left: 2px solid var(--line-strong);
-  padding-left: 1rem;
-  color: var(--mercury-dim);
-  font-size: 0.95rem;
 }

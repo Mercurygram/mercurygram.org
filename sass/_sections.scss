@@ -72,7 +72,9 @@
   border-color: var(--line-strong);
 }
 
-.dl-tag {
+/* .tag-pre (_page.scss) reuses this pill and overrides only its own bits. */
+.dl-tag,
+.tag-pre {
   align-self: flex-start;
   font-family: var(--font-mono);
   font-size: 0.7rem;
