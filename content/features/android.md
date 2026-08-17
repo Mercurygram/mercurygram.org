@@ -204,6 +204,19 @@ Some of the fork is not a toggle. These behaviours are always active.
   first 80, and the sticker picker shows every stored recent sticker rather than
   20.
 
+### Media
+
+- **Editing keeps the resolution.** The crop is cut out of the original file
+  rather than out of a copy that has already been shrunk to the send size, so a
+  photo cropped to a quarter of the frame is sent at the full 1280 px (or
+  2560 px with *Send large photos*) instead of a quarter of it. A photo that
+  also went through a filter is cut out of the filtered working copy, which the
+  editor caps at 2560 px. The editor's
+  working file is also saved near-losslessly, so sending no longer re-compresses
+  an already-compressed image, and picking high quality on a photo sent outside
+  an album now really sends it at high quality.
+  <span class="tag-pre">pre-release</span>
+
 ### Fixes carried ahead of upstream
 
 The fork also carries upstream bug fixes: the Android 16 heads-up notification
