@@ -5,8 +5,8 @@ the [Mercurygram](https://github.com/Mercurygram) project: privacy and security 
 Telegram for Android ([Mercurygram](https://github.com/Mercurygram/Mercurygram)) and Desktop
 ([mdesktop](https://github.com/Mercurygram/mdesktop)).
 
-Static site built with [Zola](https://www.getzola.org/). Single page, no JavaScript, self-hosted
-fonts.
+Static site built with [Zola](https://www.getzola.org/) 0.23 or later, which needs Tera v2
+templates (components, no macros). No JavaScript, self-hosted fonts.
 
 ## Build
 
@@ -29,7 +29,10 @@ updates the version in `config.toml`, and re-runs the deploy.
 ## Layout
 
 - `config.toml` — site config and all download URLs / version strings (`[extra]`)
-- `templates/` — Tera templates (`macros.html`, `content.html`, `index.html`)
+- `templates/`: Tera templates. `index.html` (landing page) and `page.html` (content pages) are
+  built from the components in `components.html` (head, mark, nav, footer) and `content.html`
+  (the landing page sections). Components are hygienic, so each one takes the site config as a
+  `cfg` argument.
 - `sass/` — styles, compiled natively by Zola to `/main.css`
 - `static/` — fonts, logo, `CNAME`
 

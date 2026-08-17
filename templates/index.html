@@ -1,22 +1,17 @@
-{% import "macros.html" as macros %}
-{% import "content.html" as content %}
-
 <!DOCTYPE html>
 <html lang="en">
 
-  {{ macros::head() }}
+  {{ <head cfg={config}/> }}
 
   <body>
-    {{ content::hero() }}
+    {{ <hero cfg={config}/> }}
 
     <main>
-      {{ content::why() }}
-      {{ content::android() }}
-      {{ content::desktop() }}
-
-      {% block content %}{% endblock content %}
+      {{ <why/> }}
+      {{ <android cfg={config}/> }}
+      {{ <desktop cfg={config}/> }}
     </main>
 
-    {{ macros::footer() }}
+    {{ <footer cfg={config}/> }}
   </body>
 </html>

@@ -1,5 +1,21 @@
-{% extends "index.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-  {{ page.content }}
-{% endblock content %}
+  {{ <head cfg={config} title={page.title} description={page.description} url={page.permalink}/> }}
+
+  <body>
+    <header class="page-head">
+      {{ <nav cfg={config}/> }}
+      <div class="page-head-body">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}<p class="page-lede">{{ page.description }}</p>{% endif %}
+      </div>
+    </header>
+
+    <main class="page">
+      {{ page.content | safe }}
+    </main>
+
+    {{ <footer cfg={config}/> }}
+  </body>
+</html>
