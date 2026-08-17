@@ -97,6 +97,11 @@ Some of the fork is not a toggle. These behaviours are always active.
   both in the group defaults and in the per-member restriction editor.
 - Clicking a mention opens the profile even when the app has never been told who
   that user is, for instance in a message restored from the local cache.
+- Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
+  `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to the chat list, forum topics, contact and member
+  pickers, and the forward and share lists. The name as it was written keeps
+  matching itself, so a chat named in Cyrillic, Greek or CJK is unaffected.
+  <span class="tag-pre">pre-release</span>
 - The animated 🍑 emoji, restored. <span class="tag-pre">pre-release</span>
 
 ## Builds and updates
