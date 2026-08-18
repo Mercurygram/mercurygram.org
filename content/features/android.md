@@ -52,7 +52,7 @@ media and credentials stay readable to anyone with full device access.
 | Hide stories | Removes the stories bar from the chat list entirely. | Off |
 | Hide Premium promo | Hides the Telegram Premium, Business and gifting rows in Settings and the Premium banners in the chat list. Unlocks nothing and does not touch sponsored messages. | Off |
 | Use system font *(all accounts)* | Uses the device system typefaces instead of the bundled Roboto. | Off |
-| Show character counter <span class="tag-pre">pre-release</span> | Counts the characters in the message you are typing, for groups where a bot enforces a length limit. Hidden while Telegram shows its own remaining-characters counter. | Off |
+| Show character counter | Counts the characters in the message you are typing, for groups where a bot enforces a length limit. Hidden while Telegram shows its own remaining-characters counter. | Off |
 | Delete for everyone by default | Pre-ticks "Delete for everyone" (and "Also delete for…" in private chats) in the delete dialog. You can still untick it. | Off |
 | Save deleted & edited messages | Deleted messages stay in the chat, grayed out and non-replyable; edited messages keep their earlier versions under **Edit history** in the message menu. Stored separately from the Telegram cache. Self-destructing messages and secret chats are never saved. | Off |
 | Clear saved message history | Wipes everything the option above recorded. Shown only while it is on. | n/a |
@@ -90,9 +90,9 @@ The pack stays on your device and is never shared.
 | Disable AI summaries | Hides the AI Summary button, which sends the message text to Telegram's AI service. | Off |
 | Open links in browser | Link taps open the page in your browser instead of Instant View, which is rendered by Telegram's servers. The explicit Instant View button still works. | Off |
 | Disable link previews | Stops the app fetching web page previews while composing, in every chat, so Telegram's servers never load the links you type or paste. | Off |
-| Strip tracking parameters <span class="tag-pre">pre-release</span> | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `si` and similar) from links you open and links you paste into the message field. The rest of the address is untouched. | Off |
-| Keep drafts on this device <span class="tag-pre">pre-release</span> | Unsent drafts are never uploaded to Telegram, so they stop appearing on your other devices. Clearing a draft still syncs, so a draft stored before you turned this on can be removed from the server. | Off |
-| Confirm Telegram links <span class="tag-pre">pre-release</span> | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. | Off |
+| Strip tracking parameters | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `si` and similar) from links you open and links you paste into the message field. The rest of the address is untouched. | Off |
+| Keep drafts on this device | Unsent drafts are never uploaded to Telegram, so they stop appearing on your other devices. Clearing a draft still syncs, so a draft stored before you turned this on can be removed from the server. | Off |
+| Confirm Telegram links | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. | Off |
 | Start new chats as secret | The compose button creates an end-to-end encrypted secret chat instead of a regular one. Secret chats live only on this device. Existing chats and other ways of opening a chat are unaffected. | Off |
 
 ### Translation
@@ -143,7 +143,7 @@ to all accounts.
 |---|---|---|
 | Disable UnifiedPush | Falls back to polling for new messages. The app restarts to apply it. | Off |
 | UnifiedPush Distributor | Picks the installed distributor app that receives pushes. Long press for recent notification and decryption statistics. | Not set |
-| ↳ Google FCM (built in) <span class="tag-pre">pre-release</span> | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
+| ↳ Google FCM (built in) | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
 | Gateway URL | The URL prefix of the UnifiedPush gateway. | `https://p2p.belloworld.it/` |
 
 The default `ntfy.sh` server has very low rate limits and blocks the gateway, so
@@ -198,7 +198,7 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Remove all proxies** as a bulk action in the proxy list.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
-  forward and share lists. <span class="tag-pre">pre-release</span>
+  forward and share lists.
 - The animated 🍑 emoji, restored.
 - Material You / Monet dynamic themes.
 - Inline `code` is always tap-to-copy, all profile photos load rather than the
@@ -216,7 +216,6 @@ Some of the fork is not a toggle. These behaviours are always active.
   working file is also saved near-losslessly, so sending no longer re-compresses
   an already-compressed image, and picking high quality on a photo sent outside
   an album now really sends it at high quality.
-  <span class="tag-pre">pre-release</span>
 
 ### Fixes carried ahead of upstream
 
