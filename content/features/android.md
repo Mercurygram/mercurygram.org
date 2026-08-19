@@ -130,7 +130,7 @@ accounts.
 | Option | What it does | Default |
 |---|---|---|
 | Disable in-app updater | Stops the startup check for new releases on GitHub. Manual checks still work. | Off |
-| Accept pre-release updates | Receives the 5-dotted development snapshots taken between stable releases (such as 12.6.4.4.42). They may crash or carry half-finished features; turning the option back off rolls you back to the matching 4-dotted stable. Forced on while a pre-release is installed. | Off |
+| Accept pre-release updates <span class="tag-pre">pre-release</span> | Receives the 5-dotted development snapshots taken between stable releases (such as 12.6.4.4.42). They may crash or carry half-finished features; turning the option back off offers you the matching 4-dotted stable as an update, rolling the install back. Installing a pre-release any other way switches the option on by itself, so it always shows the channel you are on. | Off |
 | Check for updates now | Runs the check immediately and shows when it last ran. | n/a |
 
 ## Notifications
