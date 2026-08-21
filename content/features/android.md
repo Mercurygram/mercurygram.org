@@ -82,7 +82,7 @@ The pack stays on your device and is never shared.
 | Option | What it does | Default |
 |---|---|---|
 | Reduce network tracking *(all accounts)* | Rotates the session key every hour instead of once a day, so a passive observer has a harder time correlating your device across IP changes. Background network activity rises slightly, and the first key after a fresh login is still observable once. If the server rejects the shorter lifetime, that account falls back to the standard 24h key and the screen says which. | Off |
-| Use Tor *(all accounts)* | Routes Telegram protocol traffic (MTProto) through an embedded Tor daemon, defeating the passive `auth_key_id` correlation that links your account to your real IP. Media downloads and other HTTP traffic stay direct. Tor stops when the app is idle and restarts on demand. Calls may suffer, and Telegram still sees the Tor exit. Needs the companion Tor plugin, which the app offers to install. | Off |
+| Tor <span class="tag-pre">pre-release</span> *(all accounts)* | Opens the Tor screen, which is also reachable from Settings → Data and Storage → Proxy Settings and from the login screen, so an account can be logged in over Tor. Routes Telegram protocol traffic (MTProto) through an embedded Tor daemon, defeating the passive `auth_key_id` correlation that links your account to your real IP. Media downloads and other HTTP traffic stay direct. Tor stops when the app is idle and restarts on demand. Calls may suffer, and Telegram still sees the Tor exit. Needs the companion Tor plugin, which the app offers to install. While Tor is on it owns the connection: adding, picking or deleting a regular proxy is refused with a hint instead of quietly taking over, and the proxy you had before is restored when you turn Tor off. | Off |
 | ↳ Anti-censorship *(all accounts)* | **Direct connection** where Tor is not blocked, **Snowflake** where it is (domain-fronted, no setup), or **obfs4 bridges** with lines from @GetBridgesBot. | Direct connection |
 | ↳ Stop Tor after idle *(all accounts)* | Never, 1 minute, 5 minutes, 15 minutes or 1 hour. | 5 minutes |
 | Disable global search | Search stops looking up public usernames, channels and messages across Telegram, and only covers your own chats and contacts. | Off |
@@ -158,6 +158,7 @@ distributor works fine.
 | Stickers / GIFs / Games / Inline Bots | Group permissions, and the per-member restriction editor | Splits Telegram's single "Stickers & GIFs" permission into four independent toggles. |
 | Disable Secure Flags | Debug menu (long press the version number) | Allows screenshots and recents previews in screens that normally block them. |
 | Remove Ads & Proxy Sponsor | Debug menu | Drops sponsored messages and the proxy sponsor channel. |
+| Tor <span class="tag-pre">pre-release</span> | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
 
 ## Always on
 
