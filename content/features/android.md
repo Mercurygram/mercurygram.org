@@ -141,7 +141,7 @@ to all accounts.
 
 | Option | What it does | Default |
 |---|---|---|
-| Disable UnifiedPush | Falls back to polling for new messages. The app restarts to apply it. | Off |
+| Disable UnifiedPush <span class="tag-pre">pre-release</span> | Stops push notifications: the distributor subscription is dropped and both device tokens are revoked on Telegram's side. Applied immediately, no restart. Background delivery then depends on Telegram's own connection, so enable Background Connection or Keep-Alive Service under Settings → Notifications and Sounds if messages are still wanted while the app is closed. | Off |
 | UnifiedPush Distributor | Picks the installed distributor app that receives pushes. Long press for recent notification and decryption statistics. | Not set |
 | ↳ Google FCM (built in) | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
 | Gateway URL | The URL prefix of the UnifiedPush gateway. | `https://p2p.belloworld.it/` |
