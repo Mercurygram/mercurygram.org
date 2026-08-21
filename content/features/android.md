@@ -159,6 +159,7 @@ distributor works fine.
 | Stickers / GIFs / Games / Inline Bots | Group permissions, and the per-member restriction editor | Splits Telegram's single "Stickers & GIFs" permission into four independent toggles. |
 | Disable Secure Flags | Debug menu (long press the version number) | Allows screenshots and recents previews in screens that normally block them. |
 | Remove Ads & Proxy Sponsor | Debug menu | Drops sponsored messages and the proxy sponsor channel. |
+| Do Not Translate, Translate Entire Chats <span class="tag-pre">pre-release</span> | Settings → Language | Both rows are listed without Premium. The switch turns the in-chat "Translate to X" bar off for the account; manual translation stays available. |
 | Tor | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
 
 ## Always on
@@ -190,7 +191,12 @@ Some of the fork is not a toggle. These behaviours are always active.
 
 - Eight accounts instead of three.
 - The Premium app icons.
-- The per-language "Do Not Translate" list.
+- The per-language "Do Not Translate" list, and the *Translate Entire Chats*
+  switch next to it <span class="tag-pre">pre-release</span>, so the in-chat
+  "Translate to X" bar can always be switched off. The list itself does not
+  hide that bar: ML Kit is stripped from this build, so no language is ever
+  attributed to a chat. It stays local to the device and feeds the suggested
+  target languages.
 - Free folder reordering, including moving "All chats" off the first position.
 
 ### Interface
