@@ -54,7 +54,7 @@ media and credentials stay readable to anyone with full device access.
 | Use system font *(all accounts)* | Uses the device system typefaces instead of the bundled Roboto. | Off |
 | Show character counter | Counts the characters in the message you are typing, for groups where a bot enforces a length limit. Hidden while Telegram shows its own remaining-characters counter. | Off |
 | Delete for everyone by default | Pre-ticks "Delete for everyone" (and "Also delete for…" in private chats) in the delete dialog. You can still untick it. | Off |
-| Save deleted & edited messages | Deleted messages stay in the chat, grayed out and non-replyable; edited messages keep their earlier versions under **Edit history** in the message menu. Stored separately from the Telegram cache. Self-destructing messages and secret chats are never saved. | Off |
+| Save deleted & edited messages | Messages the other side deleted, your own included, stay in the chat, grayed out and non-replyable, and can be removed with the usual Delete; messages you delete yourself are not kept; edited messages keep their earlier versions under **Edit history** in the message menu. Stored separately from the Telegram cache. Self-destructing messages and secret chats are never saved. | Off |
 | Clear saved message history | Wipes everything the option above recorded. Shown only while it is on. | n/a |
 
 ### Custom emoji pack
@@ -73,9 +73,9 @@ The pack stays on your device and is never shared.
 
 | Option | What it does | Default |
 |---|---|---|
-| Send larger photos (2560px) | Raises the outgoing photo resolution cap. | Off |
 | Use rear camera for video messages | Round video messages start on the rear camera. | Off |
 | Disable Live Photos by default | Sends only the still frame of a Google Motion Photo. Tapping the motion icon in the attach panel still enables it for one selection. | Off |
+| Disable proximity sensor *(all accounts)* <span class="tag-pre">pre-release</span> | Keeps the screen on when the phone is near your face during calls and voice message playback, for phones whose sensor misfires. Raise-to-listen and the switch to the ear speaker stop working. | Off |
 
 ## Privacy
 
@@ -211,7 +211,7 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Editing keeps the resolution.** The crop is cut out of the original file
   rather than out of a copy that has already been shrunk to the send size, so a
   photo cropped to a quarter of the frame is sent at the full 1280 px (or
-  2560 px with *Send large photos*) instead of a quarter of it. A photo that
+  2560 px in high quality) instead of a quarter of it. A photo that
   also went through a filter is cut out of the filtered working copy, which the
   editor caps at 2560 px. The editor's
   working file is also saved near-losslessly, so sending no longer re-compresses
