@@ -118,7 +118,7 @@ open source (MIT) and are downloaded or imported separately, not bundled.
 |---|---|---|
 | Transcribe on device *(all accounts)* | Uses the local model instead of Telegram's premium-gated transcription request. Needs a model installed. | Off |
 | Model *(all accounts)* | Tiny (smaller, faster), Base (larger, more accurate) or Small (most accurate, slower). | Tiny |
-| Download model / Import model from file / Delete model | Fetch a model over the network, or import one you already have. | n/a |
+| Download model / Import model from file / Delete model <span class="tag-pre">pre-release</span> | Fetch a model over the network, or import one you already have. Tapping the row while a download runs stops it and discards the partial file. | n/a |
 | Language | **Automatic** lets the model detect the spoken language; **Device language** or a specific language pins it, which helps because the smaller models often mis-detect short messages. | Device language |
 | Skip silence (voice detection) *(all accounts)* | Detects speech and skips the silent parts, so the model cannot invent words during silence. Uses a small extra model downloaded alongside the main one. | **On** |
 
@@ -217,6 +217,14 @@ Some of the fork is not a toggle. These behaviours are always active.
   working file is also saved near-losslessly, so sending no longer re-compresses
   an already-compressed image, and picking high quality on a photo sent outside
   an album now really sends it at high quality.
+
+- **A transcription follows the settings it was made with**
+  <span class="tag-pre">pre-release</span>. Each on-device transcription records
+  the model and language that produced it, so changing either one transcribes the
+  message again the next time you open it instead of showing the earlier result,
+  which is what makes pinning a language after a wrong automatic detection worth
+  doing. A voice message that is not on the device is downloaded first, rather
+  than reporting that the audio is unavailable.
 
 ### Fixes carried ahead of upstream
 
