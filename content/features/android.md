@@ -75,14 +75,14 @@ The pack stays on your device and is never shared.
 |---|---|---|
 | Use rear camera for video messages | Round video messages start on the rear camera. | Off |
 | Disable Live Photos by default | Sends only the still frame of a Google Motion Photo. Tapping the motion icon in the attach panel still enables it for one selection. | Off |
-| Disable proximity sensor *(all accounts)* <span class="tag-pre">pre-release</span> | Keeps the screen on when the phone is near your face during calls and voice message playback, for phones whose sensor misfires. Raise-to-listen and the switch to the ear speaker stop working. | Off |
+| Disable proximity sensor *(all accounts)* | Keeps the screen on when the phone is near your face during calls and voice message playback, for phones whose sensor misfires. Raise-to-listen and the switch to the ear speaker stop working. | Off |
 
 ## Privacy
 
 | Option | What it does | Default |
 |---|---|---|
 | Reduce network tracking *(all accounts)* | Rotates the session key every hour instead of once a day, so a passive observer has a harder time correlating your device across IP changes. Background network activity rises slightly, and the first key after a fresh login is still observable once. If the server rejects the shorter lifetime, that account falls back to the standard 24h key and the screen says which. | Off |
-| Tor <span class="tag-pre">pre-release</span> *(all accounts)* | Opens the Tor screen, which is also reachable from Settings → Data and Storage → Proxy Settings and from the login screen, so an account can be logged in over Tor. Routes Telegram protocol traffic (MTProto) through an embedded Tor daemon, defeating the passive `auth_key_id` correlation that links your account to your real IP. Media downloads and other HTTP traffic stay direct. Tor stops when the app is idle and restarts on demand. Calls may suffer, and Telegram still sees the Tor exit. Needs the companion Tor plugin, which the app offers to install. While Tor is on it owns the connection: adding, picking or deleting a regular proxy is refused with a hint instead of quietly taking over, and the proxy you had before is restored when you turn Tor off. | Off |
+| Tor *(all accounts)* | Opens the Tor screen, which is also reachable from Settings → Data and Storage → Proxy Settings and from the login screen, so an account can be logged in over Tor. Routes Telegram protocol traffic (MTProto) through an embedded Tor daemon, defeating the passive `auth_key_id` correlation that links your account to your real IP. Media downloads and other HTTP traffic stay direct. Tor stops when the app is idle and restarts on demand. Calls may suffer, and Telegram still sees the Tor exit. Needs the companion Tor plugin, which the app offers to install. While Tor is on it owns the connection: adding, picking or deleting a regular proxy is refused with a hint instead of quietly taking over, and the proxy you had before is restored when you turn Tor off. | Off |
 | ↳ Anti-censorship *(all accounts)* | **Direct connection** where Tor is not blocked, **Snowflake** where it is (domain-fronted, no setup), or **obfs4 bridges** with lines from @GetBridgesBot. | Direct connection |
 | ↳ Stop Tor after idle *(all accounts)* | Never, 1 minute, 5 minutes, 15 minutes or 1 hour. | 5 minutes |
 | Disable global search | Search stops looking up public usernames, channels and messages across Telegram, and only covers your own chats and contacts. | Off |
@@ -130,7 +130,7 @@ accounts.
 | Option | What it does | Default |
 |---|---|---|
 | Disable in-app updater | Stops the startup check for new releases on GitHub. Manual checks still work. | Off |
-| Accept pre-release updates <span class="tag-pre">pre-release</span> | Receives the 5-dotted development snapshots taken between stable releases (such as 12.6.4.4.42). They may crash or carry half-finished features; turning the option back off offers you the matching 4-dotted stable as an update, rolling the install back. Installing a pre-release any other way switches the option on by itself, so it always shows the channel you are on. | Off |
+| Accept pre-release updates | Receives the 5-dotted development snapshots taken between stable releases (such as 12.6.4.4.42). They may crash or carry half-finished features; turning the option back off offers you the matching 4-dotted stable as an update, rolling the install back. Installing a pre-release any other way switches the option on by itself, so it always shows the channel you are on. | Off |
 | Check for updates now | Runs the check immediately and shows when it last ran. | n/a |
 
 ## Notifications
@@ -141,7 +141,7 @@ to all accounts.
 
 | Option | What it does | Default |
 |---|---|---|
-| Disable UnifiedPush <span class="tag-pre">pre-release</span> | Stops push notifications: the distributor subscription is dropped and both device tokens are revoked on Telegram's side. Applied immediately, no restart. Background delivery then depends on Telegram's own connection, so enable Background Connection or Keep-Alive Service under Settings → Notifications and Sounds if messages are still wanted while the app is closed. | Off |
+| Disable UnifiedPush | Stops push notifications: the distributor subscription is dropped and both device tokens are revoked on Telegram's side. Applied immediately, no restart. Background delivery then depends on Telegram's own connection, so enable Background Connection or Keep-Alive Service under Settings → Notifications and Sounds if messages are still wanted while the app is closed. | Off |
 | UnifiedPush Distributor | Picks the installed distributor app that receives pushes. Long press for recent notification and decryption statistics. | Not set |
 | ↳ Google FCM (built in) | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
 | Gateway URL | The URL prefix of the UnifiedPush gateway. | `https://p2p.belloworld.it/` |
@@ -158,7 +158,7 @@ distributor works fine.
 | Stickers / GIFs / Games / Inline Bots | Group permissions, and the per-member restriction editor | Splits Telegram's single "Stickers & GIFs" permission into four independent toggles. |
 | Disable Secure Flags | Debug menu (long press the version number) | Allows screenshots and recents previews in screens that normally block them. |
 | Remove Ads & Proxy Sponsor | Debug menu | Drops sponsored messages and the proxy sponsor channel. |
-| Tor <span class="tag-pre">pre-release</span> | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
+| Tor | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
 
 ## Always on
 
