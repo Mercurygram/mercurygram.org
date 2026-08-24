@@ -180,6 +180,10 @@ Some of the fork is not a toggle. These behaviours are always active.
   instead of Apple's, UnifiedPush instead of Firebase. Play Services, SafetyNet,
   Play Integrity, Cast, ML Kit and Wallet are stubbed out, passkeys are
   disabled, and BoringSSL, FFmpeg, libvpx, dav1d and tde2e are built from source.
+  Play Billing is gone too, so Telegram Premium, gifts and Stars are paid for
+  through Telegram's own invoice and card form, the one bots already use, and
+  the Google Pay button of that form is the only part that is missing
+  <span class="tag-pre">pre-release</span>.
 
 ### Premium gates removed
 
