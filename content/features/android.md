@@ -145,6 +145,7 @@ to all accounts.
 | UnifiedPush Distributor | Picks the installed distributor app that receives pushes. Long press for recent notification and decryption statistics. | Not set |
 | ↳ Google FCM (built in) | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
 | Gateway URL | The URL prefix of the UnifiedPush gateway. | `https://p2p.belloworld.it/` |
+| ↳ VAPID public key <span class="tag-pre">pre-release</span> | Shown only while Google FCM (built in) is the selected distributor. Firebase accepts a push only if it is signed with the key of the gateway it comes from, so this is the VAPID public key of the gateway set above, and its `/fcm/` route follows that same Gateway URL. Change both together to run the built-in entry through a self-hosted gateway; leave both alone to use Mercurygram's. Editing either one re-registers with the distributor straight away. | Mercurygram gateway |
 
 The default `ntfy.sh` server has very low rate limits and blocks the gateway, so
 the app warns and switches away from it. A self-hosted ntfy server or another
