@@ -208,6 +208,10 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Translate** in the selection toolbar of the message and caption editors,
   with "Use This Translation". Forced on-device in secret chats.
 - **Remove all proxies** as a bulk action in the proxy list.
+- **A toast when Telegram rate-limits the account**
+  <span class="tag-pre">pre-release</span>, with the wait time. Stock Telegram
+  retries silently once the server's `FLOOD_WAIT` expires, so "Updating..."
+  that never clears and a message stuck as pending have no visible cause.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
   forward and share lists.
