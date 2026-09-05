@@ -15,7 +15,7 @@ username = "Timothy Mario Redaelli"
 email = "&#098;&#101;&#108;&#108;&#111;&#064;&#098;&#101;&#108;&#108;&#111;&#119;&#111;&#114;&#108;&#100;&#046;&#105;&#116;"
 
 tagline = "Telegram, de-googled."
-android_version = "12.10.0.1"
+android_version = "12.10.1.1"
 desktop_version = "7.2.5.1"
 package_id = "it.belloworld.mercurygram"
 
