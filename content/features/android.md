@@ -90,7 +90,7 @@ The pack stays on your device and is never shared.
 | Disable AI summaries | Hides the AI Summary button, which sends the message text to Telegram's AI service. | Off |
 | Open links in browser | Link taps open the page in your browser instead of Instant View, which is rendered by Telegram's servers. The explicit Instant View button still works. | Off |
 | Disable link previews | Stops the app fetching web page previews while composing, in every chat, so Telegram's servers never load the links you type or paste. | Off |
-| Strip tracking parameters <span class="tag-pre">pre-release</span> | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `igsh` and about seventy more) from links you open, links you paste into the message field, and links shared into Mercurygram from another app. Site-specific ones go too, where they are only tracking on their own site: `si` on YouTube and Spotify, `s`/`t` on X, the share ids on TikTok, `ref`/`pd_rd_*` on Amazon, `ved` on Google Search. Parameters that carry real meaning are kept, such as Instagram's `img_index`. The rest of the address is untouched. | Off |
+| Strip tracking parameters | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `igsh` and about seventy more) from links you open, links you paste into the message field, and links shared into Mercurygram from another app. Site-specific ones go too, where they are only tracking on their own site: `si` on YouTube and Spotify, `s`/`t` on X, the share ids on TikTok, `ref`/`pd_rd_*` on Amazon, `ved` on Google Search. Parameters that carry real meaning are kept, such as Instagram's `img_index`. The rest of the address is untouched. | Off |
 | Keep drafts on this device | Unsent drafts are never uploaded to Telegram, so they stop appearing on your other devices. Clearing a draft still syncs, so a draft stored before you turned this on can be removed from the server. | Off |
 | Confirm Telegram links | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. | Off |
 | Start new chats as secret | The compose button creates an end-to-end encrypted secret chat instead of a regular one. Secret chats live only on this device. Existing chats and other ways of opening a chat are unaffected. | Off |
@@ -118,7 +118,7 @@ open source (MIT) and are downloaded or imported separately, not bundled.
 |---|---|---|
 | Transcribe on device *(all accounts)* | Uses the local model instead of Telegram's premium-gated transcription request. Needs a model installed. | Off |
 | Model *(all accounts)* | Tiny (smaller, faster), Base (larger, more accurate) or Small (most accurate, slower). | Tiny |
-| Download model / Import model from file / Delete model <span class="tag-pre">pre-release</span> | Fetch a model over the network, or import one you already have. Tapping the row while a download runs stops it and discards the partial file. | n/a |
+| Download model / Import model from file / Delete model | Fetch a model over the network, or import one you already have. Tapping the row while a download runs stops it and discards the partial file. | n/a |
 | Language | **Automatic** lets the model detect the spoken language; **Device language** or a specific language pins it, which helps because the smaller models often mis-detect short messages. | Device language |
 | Skip silence (voice detection) *(all accounts)* | Detects speech and skips the silent parts, so the model cannot invent words during silence. Uses a small extra model downloaded alongside the main one. | **On** |
 
@@ -145,7 +145,7 @@ to all accounts.
 | UnifiedPush Distributor | Picks the installed distributor app that receives pushes. Long press for recent notification and decryption statistics. | Not set |
 | ↳ Google FCM (built in) | Entry in the same menu for devices with Play Services and no distributor app installed. Delivers through Firebase Cloud Messaging without bundling any Google library or Firebase project: Play Services is asked for a plain WebPush endpoint, and the gateway signs the pushes it cannot sign itself. Payloads stay end-to-end encrypted, but Google learns that a notification reached the device, so the entry is never selected automatically and warns before it is. | Not set |
 | Gateway URL | The URL prefix of the UnifiedPush gateway. | `https://p2p.belloworld.it/` |
-| ↳ VAPID public key <span class="tag-pre">pre-release</span> | Shown only while Google FCM (built in) is the selected distributor. Firebase accepts a push only if it is signed with the key of the gateway it comes from, so this is the VAPID public key of the gateway set above, and its `/fcm/` route follows that same Gateway URL. Change both together to run the built-in entry through a self-hosted gateway; leave both alone to use Mercurygram's. Editing either one re-registers with the distributor straight away. | Mercurygram gateway |
+| ↳ VAPID public key | Shown only while Google FCM (built in) is the selected distributor. Firebase accepts a push only if it is signed with the key of the gateway it comes from, so this is the VAPID public key of the gateway set above, and its `/fcm/` route follows that same Gateway URL. Change both together to run the built-in entry through a self-hosted gateway; leave both alone to use Mercurygram's. Editing either one re-registers with the distributor straight away. | Mercurygram gateway |
 
 The default `ntfy.sh` server has very low rate limits and blocks the gateway, so
 the app warns and switches away from it. A self-hosted ntfy server or another
@@ -159,7 +159,8 @@ distributor works fine.
 | Stickers / GIFs / Games / Inline Bots | Group permissions, and the per-member restriction editor | Splits Telegram's single "Stickers & GIFs" permission into four independent toggles. |
 | Disable Secure Flags | Debug menu (long press the version number) | Allows screenshots and recents previews in screens that normally block them. |
 | Remove Ads & Proxy Sponsor | Debug menu | Drops sponsored messages and the proxy sponsor channel. |
-| Do Not Translate, Translate Entire Chats <span class="tag-pre">pre-release</span> | Settings → Language | Both rows are listed without Premium. The switch turns the in-chat "Translate to X" bar off for the account; manual translation stays available. |
+| Do Not Translate, Translate Entire Chats | Settings → Language | Both rows are listed without Premium. The switch turns the in-chat "Translate to X" bar off for the account; manual translation stays available. |
+| Keep-Alive Service, Background Connection | Settings → Notifications and Sounds | Both switches now write where the app reads them, so they work on every account, not only the first, and Background Connection is applied to all logged-in accounts at once. Android requires an ongoing notification while the keep-alive service runs; tapping it opens its notification channel, where it can be silenced or hidden. |
 | Tor | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
 
 ## Always on
@@ -184,15 +185,14 @@ Some of the fork is not a toggle. These behaviours are always active.
   disabled, and BoringSSL, FFmpeg, libvpx, dav1d and tde2e are built from source.
   Play Billing is gone too, so Telegram Premium, gifts and Stars are paid for
   through Telegram's own invoice and card form, the one bots already use, and
-  the Google Pay button of that form is the only part that is missing
-  <span class="tag-pre">pre-release</span>.
+  the Google Pay button of that form is the only part that is missing.
 
 ### Premium gates removed
 
 - Eight accounts instead of three.
 - The Premium app icons.
 - The per-language "Do Not Translate" list, and the *Translate Entire Chats*
-  switch next to it <span class="tag-pre">pre-release</span>, so the in-chat
+  switch next to it, so the in-chat
   "Translate to X" bar can always be switched off. The list itself does not
   hide that bar: ML Kit is stripped from this build, so no language is ever
   attributed to a chat. It stays local to the device and feeds the suggested
@@ -229,8 +229,8 @@ Some of the fork is not a toggle. These behaviours are always active.
   an already-compressed image, and picking high quality on a photo sent outside
   an album now really sends it at high quality.
 
-- **A transcription follows the settings it was made with**
-  <span class="tag-pre">pre-release</span>. Each on-device transcription records
+- **A transcription follows the settings it was made with.** Each on-device
+  transcription records
   the model and language that produced it, so changing either one transcribes the
   message again the next time you open it instead of showing the earlier result,
   which is what makes pinning a language after a wrong automatic detection worth
