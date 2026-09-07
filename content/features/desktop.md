@@ -101,8 +101,7 @@ Some of the fork is not a toggle. These behaviours are always active.
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to the chat list, forum topics, contact and member
   pickers, and the forward and share lists. The name as it was written keeps
   matching itself, so a chat named in Cyrillic, Greek or CJK is unaffected.
-  <span class="tag-pre">pre-release</span>
-- The animated 🍑 emoji, restored. <span class="tag-pre">pre-release</span>
+- The animated 🍑 emoji, restored.
 
 ## Builds and updates
 
