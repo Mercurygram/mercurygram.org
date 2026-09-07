@@ -210,10 +210,6 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Translate** in the selection toolbar of the message and caption editors,
   with "Use This Translation". Forced on-device in secret chats.
 - **Remove all proxies** as a bulk action in the proxy list.
-- **A toast when Telegram rate-limits the account**
-  <span class="tag-pre">pre-release</span>, with the wait time. Stock Telegram
-  retries silently once the server's `FLOOD_WAIT` expires, so "Updating..."
-  that never clears and a message stuck as pending have no visible cause.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
   forward and share lists.
@@ -252,4 +248,6 @@ fixes for large accounts, and a batch of photo picking and editing fixes (a
 crop that could silently send the uncropped original, a caption lost when send
 was pressed or moved onto the wrong photo when the selection was reordered,
 rotating in the crop editor discarding the crop, and images pasted from Gboard
-skipping the editor), and live location sharing without Play Services.
+skipping the editor), and live location sharing without Play Services
+<span class="tag-pre">pre-release</span>, which never left the stale
+position a GPS fix was meant to replace and did not survive a reboot.
