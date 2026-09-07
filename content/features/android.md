@@ -163,6 +163,7 @@ distributor works fine.
 | Keep-Alive Service, Background Connection | Settings → Notifications and Sounds | Both switches now write where the app reads them, so they work on every account, not only the first, and Background Connection is applied to all logged-in accounts at once. Android requires an ongoing notification while the keep-alive service runs; tapping it opens its notification channel, where it can be silenced or hidden. |
 | Mercurygram folder <span class="tag-pre">pre-release</span> | Settings → Folders, on the create and edit screens | A switch that keeps the folder off Telegram's folder API, so it counts against neither the folder limit nor the chats-per-folder limit; once the server limit is hit, "Create new folder" opens with it on. Flipping it on an existing folder that is not shared moves the folder to Mercurygram (deleted from Telegram) or back to Telegram, chats and pins included. Mercurygram folders carry a "Mercurygram" tag in the folder list and are synced between your Mercurygram apps through one JSON document in Saved Messages, so Telegram learns nothing it did not already know. |
 | Tor | Settings → Data and Storage → Proxy Settings, and the proxy button on the login screen | The same Tor screen as under Settings → Mercurygram, placed where connection settings live so it can be turned on before logging in. |
+| Search operators <span class="tag-pre">pre-release</span> | The in-chat search field | Typed filters next to the search text: `from:username`, `before:`/`after:`/`date:` (`YYYY-MM-DD`, `today`, `yesterday`) and `type:` (`photo`, `video`, `voice`, `round`, `music`, `gif`, `file`, `link`, `contact`, `geo`, `poll`, `mention`, `pinned`). Filtering runs on Telegram's servers through the same search API fields the official apps' filter UIs use, so no extra data leaves the device; a token that does not parse is searched for literally. |
 
 ## Always on
 
@@ -251,4 +252,4 @@ fixes for large accounts, and a batch of photo picking and editing fixes (a
 crop that could silently send the uncropped original, a caption lost when send
 was pressed or moved onto the wrong photo when the selection was reordered,
 rotating in the crop editor discarding the crop, and images pasted from Gboard
-skipping the editor).
+skipping the editor), and live location sharing without Play Services.
