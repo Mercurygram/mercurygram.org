@@ -248,6 +248,8 @@ fixes for large accounts, and a batch of photo picking and editing fixes (a
 crop that could silently send the uncropped original, a caption lost when send
 was pressed or moved onto the wrong photo when the selection was reordered,
 rotating in the crop editor discarding the crop, and images pasted from Gboard
-skipping the editor), and live location sharing without Play Services
-<span class="tag-pre">pre-release</span>, which never left the stale
-position a GPS fix was meant to replace and did not survive a reboot.
+skipping the editor), and two live location fixes
+<span class="tag-pre">pre-release</span>: sharing without Play Services
+never left the stale position a GPS fix was meant to replace and did not
+survive a reboot, and a location shared "until stopped" was shown as
+already expired in the chat banner and on the map.
