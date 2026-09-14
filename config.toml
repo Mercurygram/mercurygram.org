@@ -26,6 +26,7 @@ parent_site = "https://belloworld.it"
 # Android sources
 android_releases = "https://github.com/Mercurygram/Mercurygram/releases/latest"
 android_fdroid = "https://f-droid.org/en/packages/it.belloworld.mercurygram/"
+android_play = "https://play.google.com/store/apps/details?id=it.belloworld.mercurygram"
 android_obtainium = "https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22it.belloworld.mercurygram%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FMercurygram%2FMercurygram%22%2C%22author%22%3A%22Mercurygram%22%2C%22name%22%3A%22Mercurygram%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%20%5C%22%5EMercurygram-%5C%5C%5C%5Cd%5C%22%7D%22%7D"
 
 # Desktop sources
