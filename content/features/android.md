@@ -104,7 +104,7 @@ A sub-screen under Privacy. Applies to all accounts.
 | Translation engine | **Telegram cloud** sends the text to Telegram (which forwards to Google). **Alternative HTTP** routes it through a public [Mozhi](https://codeberg.org/aryak/mozhi) privacy proxy. **Offline** hands each translation to a separate FOSS app over a bound service, so the message never leaves the device; formatting may be lost, since the engine returns plain text. **Default** defers to Telegram's own setting. | Default (Telegram cloud) |
 | Install Offline Translator from F-Droid | Opens the listing for `dev.davidv.translator`, the reference offline provider. Open it once afterwards to download your language pairs. | n/a |
 | Auto-fallback on failure | If the offline translator returns nothing (no model, language not detected, service unreachable), fall back to the Alternative HTTP path. The Telegram cloud is never used as a fallback once you picked the offline engine. | **On** |
-| Engine (Alternative HTTP) | DuckDuckGo, LibreTranslate, Google (via Mozhi), MyMemory or Reverso. | DuckDuckGo |
+| Engine (Alternative HTTP) | DuckDuckGo, Google (via Mozhi) or Yandex. | DuckDuckGo |
 | Instance (Alternative HTTP) | Rotate across the default Mozhi instances, pin one of them, or enter a custom `https://` URL. The instance operator can log what it translates. | Auto (rotate across defaults) |
 
 ### Voice transcription
