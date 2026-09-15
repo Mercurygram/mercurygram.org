@@ -200,6 +200,13 @@ Some of the fork is not a toggle. These behaviours are always active.
   attributed to a chat. It stays local to the device and feeds the suggested
   target languages.
 - Free folder reordering, including moving "All chats" off the first position.
+- Up to 100 pinned chats in "All chats" instead of the five Telegram allows
+  without Premium. The order is kept on the device and written back after every
+  refresh from Telegram, which is what keeps the pins the server refuses;
+  Telegram still receives the first few as ordinary pins, so other clients show
+  those. A chat pinned on another device joins the top here, but a chat
+  unpinned there while this device was offline for long stays pinned until you
+  unpin it here.
 
 ### Interface
 
