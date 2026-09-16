@@ -73,6 +73,10 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 | Disable AI text editor | Hides the AI button in the compose field, and disables its shortcut, so your draft is never sent to Telegram's AI service. | Off |
 | Disable AI summaries | Hides the AI Summary button on incoming messages, so their text is never sent to Telegram's AI service. | Off |
 | Open links in browser | Link clicks open the page in your browser instead of Instant View, which is rendered by Telegram's servers. The explicit Instant View button still works. | Off |
+| Reduce network tracking <span class="tag-pre">pre-release</span> | Rotates the session key every hour instead of once a day, so a passive observer has a harder time correlating your device across IP changes. Background network activity rises slightly, and the first key after a fresh login is still observable once. If the server refuses the shorter lifetime, it steps up to six and then twenty-four hours, and the note under this section says which. | Off |
+| Strip tracking parameters <span class="tag-pre">pre-release</span> | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `igsh` and about seventy more) from links you open, links you copy out of a message, and links you paste into the message field. Site-specific ones go too, where they are only tracking on their own site: `si` on YouTube and Spotify, `s`/`t` on X, the share ids on TikTok and Instagram's `stkn`, `ref`/`pd_rd_*` on Amazon, `ved` on Google Search. Parameters that carry real meaning are kept, such as Instagram's `img_index`. The rest of the address is untouched. A paste that carried tracking is inserted as plain text. | Off |
+| Keep drafts on this device <span class="tag-pre">pre-release</span> | Unsent drafts are never uploaded to Telegram, so they stop appearing on your other devices. Clearing a draft still syncs, so a draft stored before you turned this on can be removed from the server. | Off |
+| Confirm Telegram links <span class="tag-pre">pre-release</span> | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. Ctrl-click skips the question, as it does for external links. | Off |
 
 ## Elsewhere in the app
 
@@ -80,15 +84,32 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 |---|---|---|
 | Lock when window is closed or minimized | Settings → Privacy and Security → Local passcode | Locks the app as soon as the last window goes to the tray or is minimized, instead of waiting for the auto-lock timer. Needs a local passcode. |
 | Remove sponsored messages | Settings → Advanced → Experimental settings, under **Mercurygram** | Hides sponsored messages in channels. Kept behind Experimental on purpose: Telegram's API terms ask clients not to interfere with them, so it is yours to enable at your own discretion. Restarts the app. |
+| Mercurygram folder <span class="tag-pre">pre-release</span> | Settings → Folders, on the create and edit screens | A switch that keeps the folder off Telegram's folder API, so it counts against neither the folder limit nor the chats-per-folder limit. Mercurygram folders carry a "Mercurygram" tag in the folder list and are synced between your Mercurygram apps through one JSON document in Saved Messages, the same one the Android client reads, so Telegram learns nothing it did not already know. |
 
 ## Always on
 
 Some of the fork is not a toggle. These behaviours are always active.
 
+### Privacy and networking
+
+- **CDN redirects are refused.** When the server hands out a CDN redirect for a
+  download, the app declines it once per file, so your permanent `auth_key_id`
+  never reaches a third-party CDN. If the datacenter insists, the download goes
+  through the CDN rather than failing. <span class="tag-pre">pre-release</span>
+- **No DNS-over-HTTPS fallback to Google.** Neither the config fallback nor the
+  proxy hostname resolver asks `dns.google.com`, directly or through the
+  google.com domains upstream fronts it behind. Cloudflare and the Firestore
+  fallback still cover both.
+  <span class="tag-pre">pre-release</span>
+
 ### Premium gates removed
 
 - Eight accounts instead of three.
 - Free folder reordering, including moving "All chats" off the first position.
+- The *Translate Entire Chats* switch under Settings → Language, so the in-chat
+  "Translate to X" bar can always be switched off, and the per-language
+  "Do Not Translate" list next to it.
+  <span class="tag-pre">pre-release</span>
 
 ### Interface
 
@@ -121,6 +142,8 @@ committed, so anyone building from source uses their own.
 The fork also carries fixes that are not Mercurygram features: collapsed
 community members no longer show up twice in folders that match by chat type, a
 use-after-free when leaving the admin log with the back button, a build failure
-on aarch64 in the chat exporter, and a workaround for the webkitgtk renderer
+on aarch64 in the chat exporter, a workaround for the webkitgtk renderer
 crash that took out every in-app webview (bot mini apps, payments, Instant View,
-web login) on some Linux graphics setups.
+web login) on some Linux graphics setups, and second-level context menus
+(Formatting, Spelling) ignoring mouse clicks on Windows
+<span class="tag-pre">pre-release</span>.
