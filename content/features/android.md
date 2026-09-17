@@ -249,7 +249,9 @@ Some of the fork is not a toggle. These behaviours are always active.
 ### Fixes carried ahead of upstream
 
 The fork also carries upstream bug fixes: the Android 16 heads-up notification
-bug, a set of crash and memory-leak fixes, secret-chat delete-for-everyone
+bug, a custom notification sound on a contact or a chat that the *Sound* screen
+reset to Default whenever it could not match the stored tone, a set of crash and
+memory-leak fixes, secret-chat delete-for-everyone
 propagation, IPv6 and multi-address proxy connectivity, several performance
 fixes for large accounts, and a batch of photo picking and editing fixes (a
 crop that could silently send the uncropped original, a caption lost when send
