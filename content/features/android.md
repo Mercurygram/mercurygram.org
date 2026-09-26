@@ -217,6 +217,9 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Translate** in the selection toolbar of the message and caption editors,
   with "Use This Translation". Forced on-device in secret chats.
 - **Remove all proxies** as a bulk action in the proxy list.
+- **Log in by QR code** <span class="tag-pre">pre-release</span> on the login
+  screen, scanned from a device where the account is already logged in
+  (Settings → Devices), like Telegram Desktop. No SMS or login code needed.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
   forward and share lists.
