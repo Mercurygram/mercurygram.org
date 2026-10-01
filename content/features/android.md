@@ -220,6 +220,8 @@ Some of the fork is not a toggle. These behaviours are always active.
 - **Log in by QR code** <span class="tag-pre">pre-release</span> on the login
   screen, scanned from a device where the account is already logged in
   (Settings → Devices), like Telegram Desktop. No SMS or login code needed.
+- **Go to first message** <span class="tag-pre">pre-release</span> in the chat
+  menu, jumps to the oldest message of a chat, group or channel.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
   forward and share lists.
