@@ -84,7 +84,7 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 |---|---|---|
 | Lock when window is closed or minimized | Settings → Privacy and Security → Local passcode | Locks the app as soon as the last window goes to the tray or is minimized, instead of waiting for the auto-lock timer. Needs a local passcode. |
 | Remove sponsored messages | Settings → Advanced → Experimental settings, under **Mercurygram** | Hides sponsored messages in channels. Kept behind Experimental on purpose: Telegram's API terms ask clients not to interfere with them, so it is yours to enable at your own discretion. Restarts the app. |
-| Mercurygram folder <span class="tag-pre">pre-release</span> | Settings → Folders, on the create and edit screens | A switch that keeps the folder off Telegram's folder API, so it counts against neither the folder limit nor the chats-per-folder limit. Mercurygram folders carry a "Mercurygram" tag in the folder list and are synced between your Mercurygram apps through one JSON document in Saved Messages, the same one the Android client reads, so Telegram learns nothing it did not already know. |
+| Mercurygram folder | Settings → Folders, on the create and edit screens | A switch that keeps the folder off Telegram's folder API, so it counts against neither the folder limit nor the chats-per-folder limit. Mercurygram folders carry a "Mercurygram" tag in the folder list and are synced between your Mercurygram apps through one JSON document in Saved Messages, the same one the Android client reads, so Telegram learns nothing it did not already know. |
 
 ## Always on
 
@@ -145,5 +145,4 @@ use-after-free when leaving the admin log with the back button, a build failure
 on aarch64 in the chat exporter, a workaround for the webkitgtk renderer
 crash that took out every in-app webview (bot mini apps, payments, Instant View,
 web login) on some Linux graphics setups, and second-level context menus
-(Formatting, Spelling) ignoring mouse clicks on Windows
-<span class="tag-pre">pre-release</span>.
+(Formatting, Spelling) ignoring mouse clicks on Windows.
