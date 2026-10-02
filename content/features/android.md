@@ -255,14 +255,16 @@ Some of the fork is not a toggle. These behaviours are always active.
 
 The fork also carries upstream bug fixes: the Android 16 heads-up notification
 bug, a custom notification sound on a contact or a chat that the *Sound* screen
-reset to Default whenever it could not match the stored tone, a set of crash and
-memory-leak fixes, secret-chat delete-for-everyone
+reset to Default whenever it could not match the stored tone, the notification
+permission prompt coming back on every launch after it was accepted, a set of
+crash and memory-leak fixes, secret-chat delete-for-everyone
 propagation, IPv6 and multi-address proxy connectivity, several performance
 fixes for large accounts, and a batch of photo picking and editing fixes (a
 crop that could silently send the uncropped original, a caption lost when send
 was pressed or moved onto the wrong photo when the selection was reordered,
 rotating in the crop editor discarding the crop, and images pasted from Gboard
-skipping the editor), and two live location fixes: sharing without Play
+skipping the editor), an album whose remaining photos overlapped after part of
+it was deleted, and two live location fixes: sharing without Play
 Services never left the stale position a GPS fix was meant to replace and
 did not survive a reboot, and a location shared "until stopped" was shown
 as already expired in the chat banner and on the map.
