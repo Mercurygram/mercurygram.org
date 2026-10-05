@@ -52,6 +52,7 @@ usable rather than finished, and keep the phone as the reference client.
 | Delete for everyone by default | Pre-ticks "Delete for everyone" in the delete dialog. You can still untick it. | Off |
 | Message details menu | Adds a **Message details** entry to the message right-click menu, showing the message and peer IDs, the date and the author, plus an **Export as JSON** entry <span class="tag-pre">pre-release</span> that copies the message's ID, sender, dates, text, reply, forward origin and views to the clipboard. | Off |
 | Show character counter <span class="tag-pre">pre-release</span> | Counts the characters in the message you are typing, for groups where a bot enforces a length limit. The over-limit counter shown while editing takes precedence. | Off |
+| Keep deleted & edited messages <span class="tag-pre">pre-release</span> | A message deleted on the server stays in the chat, faded and marked "deleted" next to its time, and can no longer be replied to. An edited message keeps the text it replaced, listed under **Edit history** in its right-click menu. In memory only, for the messages loaded when the delete or edit arrives: a restart or an unloaded chat drops them. Self-destructing messages and secret chats are never kept. | Off |
 | Hide "All" folder tab | Removes the All folder tab from the folder strip. | Off |
 | Hide Premium promo | Hides the Telegram Premium, Stars, TON, Business and gift rows in Settings. Unlocks nothing and does not touch sponsored messages. | Off |
 | Launch folder | The chat list opens on the folder you pick. A folder that no longer exists falls back to the default. | Default folder |
@@ -76,6 +77,7 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 | Reduce network tracking <span class="tag-pre">pre-release</span> | Rotates the session key every hour instead of once a day, so a passive observer has a harder time correlating your device across IP changes. Background network activity rises slightly, and the first key after a fresh login is still observable once. If the server refuses the shorter lifetime, it steps up to six and then twenty-four hours, and the note under this section says which. | Off |
 | Strip tracking parameters <span class="tag-pre">pre-release</span> | Removes click-tracking parameters (`utm_*`, `fbclid`, `gclid`, `igsh` and about seventy more) from links you open, links you copy out of a message, and links you paste into the message field. Site-specific ones go too, where they are only tracking on their own site: `si` on YouTube and Spotify, `s`/`t` on X, the share ids on TikTok and Instagram's `stkn`, `ref`/`pd_rd_*` on Amazon, `ved` on Google Search. Parameters that carry real meaning are kept, such as Instagram's `img_index`. The rest of the address is untouched. A paste that carried tracking is inserted as plain text. | Off |
 | Keep drafts on this device <span class="tag-pre">pre-release</span> | Unsent drafts are never uploaded to Telegram, so they stop appearing on your other devices. Clearing a draft still syncs, so a draft stored before you turned this on can be removed from the server. | Off |
+| Start new chats as secret <span class="tag-pre">pre-release</span> | The contacts box used to start a conversation (main menu, shortcut, the empty chat list button) becomes the secret chat picker, so picking someone starts an end-to-end encrypted chat. Existing chats are unaffected. | Off |
 | Confirm Telegram links <span class="tag-pre">pre-release</span> | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. Ctrl-click skips the question, as it does for external links. | Off |
 
 ## Elsewhere in the app
@@ -106,6 +108,10 @@ Some of the fork is not a toggle. These behaviours are always active.
 ### Premium gates removed
 
 - Eight accounts instead of three.
+- Up to 100 pinned chats in "All chats" (200 with Premium), as many as the
+  archive. The order is kept on this device; Telegram only gets the first 5
+  (10 with Premium), so other apps see a subset.
+  <span class="tag-pre">pre-release</span>
 - Free folder reordering, including moving "All chats" off the first position.
 - The *Translate Entire Chats* switch under Settings → Language, so the in-chat
   "Translate to X" bar can always be switched off, and the per-language
@@ -116,6 +122,10 @@ Some of the fork is not a toggle. These behaviours are always active.
 
 - **Go to first message** in the chat menu, jumps to the oldest message of a
   chat, group or channel. <span class="tag-pre">pre-release</span>
+- **Mention** and **Translate** in the message field's right-click menu when
+  text is selected: Mention turns the selection into a mention of a contact you
+  pick, Translate replaces it with its translation before sending. Not offered
+  in secret chats. <span class="tag-pre">pre-release</span>
 - **Stickers / GIFs / Games / Inline bots** are four independent group
   permissions instead of Telegram's single bundled "Stickers & GIFs" toggle,
   both in the group defaults and in the per-member restriction editor.
