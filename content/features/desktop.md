@@ -50,7 +50,8 @@ usable rather than finished, and keep the phone as the reference client.
 | Show IDs in profile | Adds the user or chat ID to Profile Info. | Off |
 | Hide stories | Removes the stories bar from the chat list entirely. | Off |
 | Delete for everyone by default | Pre-ticks "Delete for everyone" in the delete dialog. You can still untick it. | Off |
-| Message details menu | Adds a **Message details** entry to the message right-click menu, showing the message and peer IDs, the date and the author. | Off |
+| Message details menu | Adds a **Message details** entry to the message right-click menu, showing the message and peer IDs, the date and the author, plus an **Export as JSON** entry <span class="tag-pre">pre-release</span> that copies the message's ID, sender, dates, text, reply, forward origin and views to the clipboard. | Off |
+| Show character counter <span class="tag-pre">pre-release</span> | Counts the characters in the message you are typing, for groups where a bot enforces a length limit. The over-limit counter shown while editing takes precedence. | Off |
 | Hide "All" folder tab | Removes the All folder tab from the folder strip. | Off |
 | Hide Premium promo | Hides the Telegram Premium, Stars, TON, Business and gift rows in Settings. Unlocks nothing and does not touch sponsored messages. | Off |
 | Launch folder | The chat list opens on the folder you pick. A folder that no longer exists falls back to the default. | Default folder |
@@ -83,6 +84,7 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 |---|---|---|
 | Lock when window is closed or minimized | Settings → Privacy and Security → Local passcode | Locks the app as soon as the last window goes to the tray or is minimized, instead of waiting for the auto-lock timer. Needs a local passcode. |
 | Remove sponsored messages | Settings → Advanced → Experimental settings, under **Mercurygram** | Hides sponsored messages in channels. Kept behind Experimental on purpose: Telegram's API terms ask clients not to interfere with them, so it is yours to enable at your own discretion. Restarts the app. |
+| Search operators <span class="tag-pre">pre-release</span> | The in-chat search field | Typed filters next to the search text: `from:username`, `before:`/`after:`/`date:` (`YYYY-MM-DD`, `today`, `yesterday`) and `type:` (`photo`, `video`, `voice`, `round`, `music`, `gif`, `file`, `link`, `contact`, `geo`, `poll`, `mention`, `pinned`). Filtering runs on Telegram's servers through the same search API fields the official apps' filter UIs use, so no extra data leaves the device; a token that does not parse is searched for literally. |
 | Mercurygram folder | Settings → Folders, on the create and edit screens | A switch that keeps the folder off Telegram's folder API, so it counts against neither the folder limit nor the chats-per-folder limit. Mercurygram folders carry a "Mercurygram" tag in the folder list and are synced between your Mercurygram apps through one JSON document in Saved Messages, the same one the Android client reads, so Telegram learns nothing it did not already know. |
 
 ## Always on
@@ -112,6 +114,8 @@ Some of the fork is not a toggle. These behaviours are always active.
 
 ### Interface
 
+- **Go to first message** in the chat menu, jumps to the oldest message of a
+  chat, group or channel. <span class="tag-pre">pre-release</span>
 - **Stickers / GIFs / Games / Inline bots** are four independent group
   permissions instead of Telegram's single bundled "Stickers & GIFs" toggle,
   both in the group defaults and in the per-member restriction editor.
