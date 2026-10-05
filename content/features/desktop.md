@@ -60,7 +60,6 @@ usable rather than finished, and keep the phone as the reference client.
 | Option | What it does | Default |
 |---|---|---|
 | Show all recent stickers | Lifts the 20-entry cap on the recent stickers row, showing every recent sticker the app has stored. | Off |
-| Send large photos | Uploads photos at up to 2560px instead of 1280px. | Off |
 
 ## Privacy
 
