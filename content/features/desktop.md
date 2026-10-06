@@ -84,7 +84,7 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 
 | Option | What it does | Default |
 |---|---|---|
-| Alternative HTTP (Mozhi) <span class="tag-pre">pre-release</span> | Every translation (the message box, the whole-chat bar, Translate in the message field) goes to a public [Mozhi](https://codeberg.org/aryak/mozhi) privacy proxy instead of Telegram, so Telegram never sees the text. The **Engine** row picks DuckDuckGo, Google or Yandex behind it, and **Instance** rotates across the default Mozhi instances or takes a custom URL. The instance operator can log what it translates. Results are plain text: formatting and links are dropped. | Off |
+| Alternative HTTP (Mozhi) <span class="tag-pre">pre-release</span> | Every translation (the message box, the whole-chat bar, Translate in the message field) goes to a public [Mozhi](https://codeberg.org/aryak/mozhi) privacy proxy instead of Telegram, so Telegram never sees the text. The **Engine** row picks DuckDuckGo, Google or Yandex behind it, and **Instance** rotates across the default Mozhi instances or takes a custom URL. The instance operator can log what it translates. Links, mentions, code and custom emoji come back untouched; bold, italic, spoilers, quotes and hidden link labels are translated and keep their formatting. | Off |
 
 ## Elsewhere in the app
 
