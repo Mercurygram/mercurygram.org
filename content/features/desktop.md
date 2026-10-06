@@ -80,6 +80,12 @@ Opt-in mitigations that keep queries and drafts off Telegram's servers.
 | Start new chats as secret <span class="tag-pre">pre-release</span> | The contacts box used to start a conversation (main menu, shortcut, the empty chat list button) becomes the secret chat picker, so picking someone starts an end-to-end encrypted chat. Existing chats are unaffected. | Off |
 | Confirm Telegram links <span class="tag-pre">pre-release</span> | Asks before opening `t.me` and `tg://` links and shows the address first, against links that quietly join a channel or open a bot. Ctrl-click skips the question, as it does for external links. | Off |
 
+## Translation
+
+| Option | What it does | Default |
+|---|---|---|
+| Alternative HTTP (Mozhi) <span class="tag-pre">pre-release</span> | Every translation (the message box, the whole-chat bar, Translate in the message field) goes to a public [Mozhi](https://codeberg.org/aryak/mozhi) privacy proxy instead of Telegram, so Telegram never sees the text. The **Engine** row picks DuckDuckGo, Google or Yandex behind it, and **Instance** rotates across the default Mozhi instances or takes a custom URL. The instance operator can log what it translates. Results are plain text: formatting and links are dropped. | Off |
+
 ## Elsewhere in the app
 
 | Option | Where | What it does |
