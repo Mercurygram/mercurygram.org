@@ -105,7 +105,8 @@ The pack stays on your device and is never shared.
 
 ### Translation
 
-A sub-screen under Privacy. Applies to all accounts.
+A sub-screen under Privacy. Applies to all accounts, except *Hide translation
+bar*, which is set per account.
 
 | Option | What it does | Default |
 |---|---|---|
@@ -114,6 +115,7 @@ A sub-screen under Privacy. Applies to all accounts.
 | Auto-fallback on failure | If the offline translator returns nothing (no model, language not detected, service unreachable), fall back to the Alternative HTTP path. The Telegram cloud is never used as a fallback once you picked the offline engine. | **On** |
 | Engine (Alternative HTTP) | DuckDuckGo, Google (via Mozhi) or Yandex. | DuckDuckGo |
 | Instance (Alternative HTTP) | Rotate across the default Mozhi instances, pin one of them, or enter a custom `https://` URL. The instance operator can log what it translates. | Auto (rotate across defaults) |
+| Hide translation bar | Never shows the "Translate to X" bar at the top of chats. Translate in the chat menu still translates the whole chat, and the bar comes back while a chat is translated, so Show original stays reachable. Unlike the per-chat Hide, nothing is sent to Telegram. | Off |
 
 ### Voice transcription
 
