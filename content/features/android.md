@@ -65,14 +65,16 @@ across restarts. Hidden accounts are not listed and keep their own place.
 | Save deleted & edited messages | Messages the other side deleted, your own included, stay in the chat, grayed out and non-replyable, and can be removed with the usual Delete; messages you delete yourself are not kept; edited messages keep their earlier versions under **Edit history** in the message menu. Stored separately from the Telegram cache. Self-destructing messages and secret chats are never saved. | Off |
 | Clear saved message history | Wipes everything the option above recorded. Shown only while it is on. | n/a |
 
-### Custom emoji pack
+### Emoji
 
-A sub-screen under General. Renders emoji from your own pack instead of the
-built-in Noto set; any emoji the pack is missing falls back to the built-in one.
-The pack stays on your device and is never shared.
+A sub-screen under General. Renders emoji with your phone's emoji font or from
+your own pack instead of the built-in Noto set; any emoji the font or pack is
+missing falls back to the built-in one. The pack stays on your device and is
+never shared. Turning on one source turns off the other.
 
 | Option | What it does | Default |
 |---|---|---|
+| Use system emoji *(all accounts)* | Draws emoji with the phone's own emoji font, everywhere in the app. | Off |
 | Use custom emoji pack *(all accounts)* | Switches emoji rendering to the imported pack. | Off |
 | Import pack from file | Takes a `.zip` of emoji images, or an official Telegram APK to extract emoji from. | n/a |
 | Remove pack | Deletes the imported pack and goes back to the built-in set. | n/a |
