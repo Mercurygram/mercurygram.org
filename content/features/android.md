@@ -234,6 +234,8 @@ Some of the fork is not a toggle. These behaviours are always active.
   SMS or login code needed.
 - **Go to first message** in the chat menu, jumps to the oldest message of a
   chat, group or channel.
+- A chat list that follows the system font size (Settings → Display → Font
+  size), up to 1.3×. Upstream keeps chat names and previews at a fixed size.
 - Search that folds decorated Unicode fonts, so typing `Cucina italiana` finds
   `ℂᑌℂℐℕᗅ ℐᝨᗅℒℐᗅℕᗅ`. Applies to chat search, contact and member pickers, and the
   forward and share lists.
