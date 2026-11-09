@@ -41,7 +41,7 @@ media and credentials stay readable to anyone with full device access.
 | Only show settings when using a hidden account | Keeps the Hidden Accounts screen itself out of sight unless you are signed into a hidden account. | Off |
 | Change unlock code / Remove hidden account | Long-press an account in the list. Removing it makes the account visible again everywhere. | n/a |
 
-## Account order <span class="tag-pre">pre-release</span>
+## Account order
 
 The **Reorder accounts** row appears in the Mercurygram settings once more than
 one account is visible. Long-press an account and drag it to change the order
