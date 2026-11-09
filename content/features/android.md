@@ -76,7 +76,7 @@ never shared. Turning on one source turns off the other.
 |---|---|---|
 | Use system emoji *(all accounts)* | Draws emoji with the phone's own emoji font, everywhere in the app. | Off |
 | Use custom emoji pack *(all accounts)* | Switches emoji rendering to the imported pack. | Off |
-| Import pack from file | Takes a `.zip` of emoji images, or an official Telegram APK to extract emoji from. | n/a |
+| Import pack from file | Takes a `.zip` of emoji images, an official Telegram APK to extract emoji from, or an `emoji.pack` file. | n/a |
 | Remove pack | Deletes the imported pack and goes back to the built-in set. | n/a |
 
 ## Media
